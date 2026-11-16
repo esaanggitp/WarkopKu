@@ -2,7 +2,6 @@
 
 **WarkopKu** adalah aplikasi web pemesanan dan kasir (Point of Sale / POS) modern khusus warkop (warung kopi) Indonesia. Dirancang untuk alur kerja cepat, mendukung pemesanan mandiri oleh pelanggan lewat scan QR meja, sistem pesanan kelompok (*Group Order*), layar antrean dapur (*Kitchen Display System / KDS*), layar POS kasir, hingga dashboard analitik pemilik warkop dengan sinkronisasi basis data **Firebase Firestore** dan multi-tab realtime.
 
-<img width="1343" height="595" alt="Screenshot 2026-11-17 050800" src="https://github.com/user-attachments/assets/928ef0ef-2c0b-4159-85b1-95081b7c43d3" />
 <img width="1038" height="519" alt="image" src="https://github.com/user-attachments/assets/88e885d1-b74f-4116-8f78-6fc4ae583a96" />
 
 
