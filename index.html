@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WarkopKu - Sistem Pemesanan Warkop Online Realtime</title>
+  <meta name="description" content="Aplikasi pemesanan warkop online self-order scan QR, group order (pesan bareng), KDS dapur, dan POS admin dengan database Firebase.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            stone: {
+              850: '#23201d',
+              950: '#0c0a09'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0c0a09;
+      color: #f5f5f4;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    /* Hide scrollbars for slick mobile tabs */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Print styles for thermal POS receipts and QR table cards */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printable-receipt, #printable-receipt * {
+        visibility: visible;
+      }
+      #printable-receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 80mm; /* Standard 80mm or 58mm thermal receipt printer */
+        margin: 0;
+        padding: 5mm;
+        box-shadow: none !important;
+        border: none !important;
+      }
+    }
+  </style>
+
+  <!-- React 18 & ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- Babel Standalone for in-browser JSX parsing -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Firebase App & Firestore Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- Pure JS Standalone QR Code Generator -->
+  <script src="js/qrcode.js"></script>
+  <!-- Mock Initial Data (Warkop Menu, Ingredients, Tables) -->
+  <script src="js/mock-data.js"></script>
+  <!-- Firebase Config & Sync Manager -->
+  <script src="js/firebase-config.js"></script>
+  <!-- Unified Store & Realtime Engine -->
+  <script src="js/store.js"></script>
+  <!-- Role-Based Authentication & Access Control -->
+  <script src="js/auth.js"></script>
+
+  <!-- React Components (JSX with Babel) -->
+  <script type="text/babel" src="js/components/StaffLoginModal.js"></script>
+  <script type="text/babel" src="js/components/Navbar.js"></script>
+  <script type="text/babel" src="js/components/CustomerView.js"></script>
+  <script type="text/babel" src="js/components/GroupOrderModal.js"></script>
+  <script type="text/babel" src="js/components/PaymentModal.js"></script>
+  <script type="text/babel" src="js/components/OrderTracker.js"></script>
+  <script type="text/babel" src="js/components/KitchenView.js"></script>
+  <script type="text/babel" src="js/components/CashierView.js"></script>
+  <script type="text/babel" src="js/components/TableManager.js"></script>
+  <script type="text/babel" src="js/components/InventoryManager.js"></script>
+  <script type="text/babel" src="js/components/AdminDashboard.js"></script>
+  <script type="text/babel" src="js/components/ReceiptModal.js"></script>
+  <script type="text/babel" src="js/components/FirebaseModal.js"></script>
+  <script type="text/babel" src="js/app.js"></script>
+</head>
+<body class="bg-stone-950 text-stone-100 min-h-screen">
+  <div id="root">
+    <!-- Initial Loading State -->
+    <div class="min-h-screen flex flex-col items-center justify-center p-4">
+      <div className="w-14 h-14 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-3xl mb-4 animate-bounce">
+        ☕
+      </div>
+      <h2 class="text-lg font-bold text-white tracking-wide">Memuat WarkopKu...</h2>
+      <p class="text-xs text-stone-400 mt-1">Sistem Pemesanan Warkop Online Realtime</p>
+    </div>
+  </div>
+</body>
+</html>

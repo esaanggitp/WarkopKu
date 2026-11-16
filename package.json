@@ -1,0 +1,21 @@
+{
+  "name": "warkop-online-pos",
+  "version": "1.0.0",
+  "description": "Aplikasi Pemesanan Warkop Online Realtime - Pelanggan (Self-Order & Group Order), Dapur (KDS), dan Pemilik Usaha (POS & Stok)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "warkop",
+    "pos",
+    "self-order",
+    "group-order",
+    "kds",
+    "firebase",
+    "qris"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}
